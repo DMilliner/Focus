@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gameModes">
+        <item name="infinity_mode">Infinity Mode</item>
+        <item name="time_attack">Time Attack</item>
+    </string-array>
+
+    <string-array name="gameModesValues">
+        <item name="infinity_mode">Infinity Mode</item>
+        <item name="time_attack">Time Attack</item>
+    </string-array>
+</resources>

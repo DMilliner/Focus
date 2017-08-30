@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <PreferenceCategory
+        android:title="Game Settings">
+        <ListPreference
+        android:key="mode_game"
+        android:title="Game Modes"
+        android:summary="Define which game mode you want to play"
+        android:defaultValue="1"
+        android:entries="@array/gameModes"
+        android:entryValues="@array/gameModesValues"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Account Settings">
+        <Preference
+            android:title="Sign Out"
+            android:summary="Sign out of current account"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

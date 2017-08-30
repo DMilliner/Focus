@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="milliner.hc.MainActivity"
+    android:clipChildren="false"
+    android:keepScreenOn="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:id="@+id/game_mode"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/game_mode_text"
+                android:text="@string/game_mode_text"
+                android:textSize="25sp"
+                android:layout_marginEnd="5dp"
+                android:textColor="#fafafa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/game_mode_value"
+                android:layout_toEndOf="@+id/game_mode_text"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                android:textColor="#00c7c7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/game_mode"
+            android:id="@+id/upper_buttons_bet_lines"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bet_puke1"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+
+            <Button
+                android:id="@+id/bet_puke2"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+
+            <Button
+                android:id="@+id/bet_puke3"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/center_buttons_bet_lines"
+            android:layout_below="@+id/upper_buttons_bet_lines"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bet_puke4"
+                android:rotation="90"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/playground"
+                android:clipChildren="false">
+
+                <ImageView
+                    android:id="@+id/puke1"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:clipChildren="false"/>
+
+                <ImageView
+                    android:id="@+id/puke2"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_toEndOf="@+id/puke1"/>
+
+                <ImageView
+                    android:id="@+id/puke3"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_toEndOf="@+id/puke2"/>
+
+                <ImageView
+                    android:id="@+id/puke4"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/puke1"/>
+
+                <ImageView
+                    android:id="@+id/puke_alt"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/puke2"
+                    android:layout_toEndOf="@+id/puke4"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:id="@+id/puke5"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/puke3"
+                    android:layout_toEndOf="@+id/puke_alt"/>
+
+                <ImageView
+                    android:id="@+id/puke6"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/puke4"/>
+
+                <ImageView
+                    android:id="@+id/puke7"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/puke_alt"
+                    android:layout_toEndOf="@+id/puke6"/>
+
+                <ImageView
+                    android:id="@+id/puke8"
+                    android:src="@drawable/ic_track_changes_black"
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/puke5"
+                    android:layout_toEndOf="@+id/puke7"
+                    android:clipChildren="false"/>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bet_puke5"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:rotation="90"
+                android:drawableTop="@drawable/ic_stars_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lower_buttons_bet_lines"
+            android:layout_below="@+id/center_buttons_bet_lines"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bet_puke6"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+            <Button
+                android:id="@+id/bet_puke8"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+            <Button
+                android:id="@+id/bet_puke7"
+                android:layout_width="65dp"
+                android:layout_height="50dp"
+                android:drawableTop="@drawable/ic_stars_black"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_shuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_infinite" />
+
+    <TextView
+        android:id="@+id/counter_top"
+        android:textColor="#FFB0171F"
+        android:textSize="50sp"
+        android:layout_margin="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="onClickTopScore"
+        android:clickable="true"/>
+
+    <TextView
+        android:id="@+id/timer"
+        android:textColor="#FF8ae32b"
+        android:textSize="50sp"
+        android:layout_margin="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+
+    <TextView
+        android:id="@+id/counter"
+        android:textColor="#FF000000"
+        android:layout_margin="8dp"
+        android:textSize="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/counter_top"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

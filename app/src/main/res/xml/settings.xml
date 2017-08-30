@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <PreferenceCategory
+        android:title="Game Settings">
+        <ListPreference
+            android:key="game_mode"
+            android:icon="@drawable/ic_game_mode"
+            android:title="Game Modes"
+            android:summary="Define which game mode you want to play"
+            android:defaultValue="Infinity Mode"
+            android:entries="@array/gameModes"
+            android:entryValues="@array/gameModesValues"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Account Settings">
+        <EditTextPreference
+            android:key="user_name"
+            android:title="Input your name"
+            android:hint="Guest"
+            android:icon="@drawable/ic_account"
+            android:dialogIcon="@drawable/ic_face"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="About">
+
+        <Preference
+            android:key="aboutGame"
+            android:title="About the Game">
+            <!-- <intent android:action="your.package.path.to.Activity"/> -->
+         </Preference>
+
+    </PreferenceCategory>
+</PreferenceScreen>

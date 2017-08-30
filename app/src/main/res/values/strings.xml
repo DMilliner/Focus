@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">U-FoCUS</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_preferences">Preferences</string>
+    <!-- SharedPreferences Keys -->
+    <string name="game_mode_text">Game Mode : </string>
+    <string name="sp_key_game_mode">gameMode</string>
+
+</resources>
