@@ -26,7 +26,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import milliner.hc.MainActivity
 import java.util.*
 
 /**
@@ -125,6 +124,7 @@ class MainActivity : AppCompatActivity() {
     private var remainingTime: Long = 0
     private var countDown: CountDownTimer? = null
     private var gameStarted = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("Debug-HC", "onCreate")
@@ -443,299 +443,299 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         Log.d("Debug-HC", "onPause")
-        cleanAnnimations()
+        cleanAnimations()
     }
 
-    private fun cleanAnnimations() {
+    private fun cleanAnimations() {
         if (AnimationMoveA != null && AnimationMoveA!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveA!!.end()
         }
         if (AnimationMoveB != null && AnimationMoveB!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveB!!.end()
         }
         if (AnimationMoveC != null && AnimationMoveC!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveC!!.end()
         }
         if (AnimationMoveD != null && AnimationMoveD!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveD!!.end()
         }
         if (AnimationMoveE != null && AnimationMoveE!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveE!!.end()
         }
         if (AnimationMoveF != null && AnimationMoveF!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveF!!.end()
         }
         if (AnimationMoveG != null && AnimationMoveG!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveG!!.end()
         }
         if (AnimationMoveH != null && AnimationMoveH!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveH!!.end()
         }
         if (AnimationMoveI != null && AnimationMoveI!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveI!!.end()
         }
         if (AnimationMoveJ != null && AnimationMoveJ!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveJ!!.end()
         }
         if (AnimationMoveK != null && AnimationMoveK!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveK!!.end()
         }
         if (AnimationMoveL != null && AnimationMoveL!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveL!!.end()
         }
         if (AnimationMoveM != null && AnimationMoveM!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveM!!.end()
         }
         if (AnimationMoveMbis != null && AnimationMoveMbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveMbis!!.end()
         }
         if (AnimationMoveN != null && AnimationMoveN!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveN!!.end()
         }
         if (AnimationMoveNbis != null && AnimationMoveNbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveNbis!!.end()
         }
         if (AnimationMoveO != null && AnimationMoveO!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveO!!.end()
         }
         if (AnimationMoveObis != null && AnimationMoveObis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveObis!!.end()
         }
         if (AnimationMoveP != null && AnimationMoveP!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveP!!.end()
         }
         if (AnimationMovePbis != null && AnimationMovePbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMovePbis!!.end()
         }
         if (AnimationMoveQ != null && AnimationMoveQ!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveQ!!.end()
         }
         if (AnimationMoveQbis != null && AnimationMoveQbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveQbis!!.end()
         }
         if (AnimationMoveR != null && AnimationMoveR!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveR!!.end()
         }
         if (AnimationMoveRbis != null && AnimationMoveRbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveRbis!!.end()
         }
         if (AnimationMoveS != null && AnimationMoveS!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveS!!.end()
         }
         if (AnimationMoveT != null && AnimationMoveT!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveT!!.end()
         }
         if (AnimationMoveU != null && AnimationMoveU!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveU!!.end()
         }
         if (AnimationMoveUbis != null && AnimationMoveUbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveUbis!!.end()
         }
         if (AnimationMoveV != null && AnimationMoveV!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveV!!.end()
         }
         if (AnimationMoveVbis != null && AnimationMoveVbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveVbis!!.end()
         }
         if (AnimationMoveW != null && AnimationMoveW!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveW!!.end()
         }
         if (AnimationMoveWbis != null && AnimationMoveWbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveWbis!!.end()
         }
         if (AnimationMoveX != null && AnimationMoveX!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveX!!.end()
         }
         if (AnimationMoveXbis != null && AnimationMoveXbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveXbis!!.end()
         }
         if (AnimationMoveY != null && AnimationMoveY!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveY!!.end()
         }
         if (AnimationMoveYbis != null && AnimationMoveYbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveYbis!!.end()
         }
         if (AnimationMoveZ != null && AnimationMoveZ!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveZ!!.end()
         }
         if (AnimationMoveZbis != null && AnimationMoveZbis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveZbis!!.end()
         }
         if (AnimationMoveAlpha != null && AnimationMoveAlpha!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveAlpha!!.end()
         }
         if (AnimationMoveAlphaBis != null && AnimationMoveAlphaBis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveAlphaBis!!.end()
         }
         if (AnimationMoveBeta != null && AnimationMoveBeta!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
             AnimationMoveBeta!!.end()
         }
         if (AnimationMoveBetaBis != null && AnimationMoveBetaBis!!.isRunning) {
-            if (listAnimations != null && !listAnimations!!.isEmpty()) {
+            if (listAnimations != null && listAnimations!!.isNotEmpty()) {
                 iterator = 0
                 listAnimations!!.clear()
             }
@@ -788,61 +788,88 @@ class MainActivity : AppCompatActivity() {
             }
         }
         defineSpeed()
-        if (score == 5) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 10) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 15) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 25) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 50) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 75) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 100) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 150) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 200) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 300) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 450) {
-            showSpeedDialog(speed.toFloat())
-        } else if (score == 500) {
-            showSpeedDialog(speed.toFloat())
+        when (score) {
+            5 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            10 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            15 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            25 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            50 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            75 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            100 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            150 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            200 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            300 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            450 -> {
+                showSpeedDialog(speed.toFloat())
+            }
+            500 -> {
+                showSpeedDialog(speed.toFloat())
+            }
         }
     }
 
     private fun defineSpeed() {
         if (gameMode == "Time Attack") {
-            if (score >= 0 && score < 15) {
-                speed = 420
-            } else if (score >= 15 && score < 25) {
-                speed = 314
-            } else if (score >= 25 && score < 50) {
-                speed = 200
-            } else if (score >= 50) {
-                speed = 100
+            when {
+                score in 0..14 -> {
+                    speed = 420
+                }
+                score in 15..24 -> {
+                    speed = 314
+                }
+                score in 25..49 -> {
+                    speed = 200
+                }
+                score >= 50 -> {
+                    speed = 100
+                }
             }
         } else if (gameMode == "Infinity Mode") {
-            if (score >= 0 && score < 5) {
-                speed = 1000
-            } else if (score >= 5 && score < 10) {
-                speed = 900
-            } else if (score >= 10 && score < 15) {
-                speed = 800
-            } else if (score >= 15 && score < 25) {
-                speed = 700
-            } else if (score >= 25 && score < 50) {
-                speed = 600
-            } else if (score >= 50 && score < 75) {
-                speed = 500
-            } else if (score >= 75 && score < 100) {
-                speed = 400
-            } else if (score >= 100) {
-                speed = 300
+            when {
+                score in 0..4 -> {
+                    speed = 1000
+                }
+                score in 5..9 -> {
+                    speed = 900
+                }
+                score in 10..14 -> {
+                    speed = 800
+                }
+                score in 15..24 -> {
+                    speed = 700
+                }
+                score in 25..49 -> {
+                    speed = 600
+                }
+                score in 50..74 -> {
+                    speed = 500
+                }
+                score in 75..99 -> {
+                    speed = 400
+                }
+                score >= 100 -> {
+                    speed = 300
+                }
             }
         }
     }
@@ -1912,7 +1939,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun lostTimeAttackDialog() {
-        cleanAnnimations()
+        cleanAnimations()
         reveal()
         buttonsAlgorithm(false)
         val builder = AlertDialog.Builder(this@MainActivity)
