@@ -17,9 +17,12 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -208,10 +211,10 @@ public class MainActivity extends AppCompatActivity {
         timer = (TextView) findViewById(R.id.timer);
 
 
-        if(gameMode.equals("Infinity Mode")){
+        if (gameMode.equals("Infinity Mode")) {
             topCounter.setVisibility(View.VISIBLE);
             timer.setVisibility(View.INVISIBLE);
-        } else if (gameMode.equals("Time Attack")){
+        } else if (gameMode.equals("Time Attack")) {
             topCounter.setVisibility(View.INVISIBLE);
             score = 0;
             timeAttackHighScore = mSharedPreferences.getInt("timeAttackTopScore", 0);
@@ -227,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
         isFirstLost = mSharedPreferences.getBoolean("isFirstLost", true);
         boolean isTutorialSeen = mSharedPreferences.getBoolean("isTutorialSeen", false);
-        if(!isTutorialSeen){
+        if (!isTutorialSeen) {
             SharedPreferences.Editor editor = mSharedPreferences.edit();
             editor.putBoolean("isTutorialSeen", true);
             editor.apply();
@@ -235,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
             initialTutorialDialog();
         }
 
-        toDp = 1/ ((float)getApplicationContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+        toDp = 1 / ((float) getApplicationContext().getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
 
         fab_shuffle = (FloatingActionButton) findViewById(R.id.fab_shuffle);
         fab_shuffle.setOnClickListener(new OnClickListener() {
@@ -253,21 +256,21 @@ public class MainActivity extends AppCompatActivity {
 
                 topScoreOnClickIsEnabled = false;
 
-                posOneX   = puke1.getLeft();
-                posTwoX   = puke2.getLeft();
+                posOneX = puke1.getLeft();
+                posTwoX = puke2.getLeft();
                 posThreeX = puke3.getLeft();
-                posFourX  = puke4.getLeft();
-                posFiveX  = puke5.getLeft();
-                posSixX   = puke6.getLeft();
+                posFourX = puke4.getLeft();
+                posFiveX = puke5.getLeft();
+                posSixX = puke6.getLeft();
                 posSevenX = puke7.getLeft();
                 posEightX = puke8.getLeft();
 
-                posOneY   = puke1.getTop();
-                posTwoY   = puke2.getTop();
+                posOneY = puke1.getTop();
+                posTwoY = puke2.getTop();
                 posThreeY = puke3.getTop();
-                posFourY  = puke4.getTop();
-                posFiveY  = puke5.getTop();
-                posSixY   = puke6.getTop();
+                posFourY = puke4.getTop();
+                posFiveY = puke5.getTop();
+                posSixY = puke6.getTop();
                 posSevenY = puke7.getTop();
                 posEightY = puke8.getTop();
 
@@ -287,19 +290,19 @@ public class MainActivity extends AppCompatActivity {
 
                 buttonsAlgorithm(false);
 
-                if ((betPuke1.getLeft() - deltaTopX)* toDp == puke2.getLeft() * toDp &&
-                        betPuke1.getTop()*toDp == puke2.getTop()*toDp) {
+                if ((betPuke1.getLeft() - deltaTopX) * toDp == puke2.getLeft() * toDp &&
+                        betPuke1.getTop() * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (countDown != null){
+                    if (countDown != null) {
                         countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
 
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -319,21 +322,21 @@ public class MainActivity extends AppCompatActivity {
 
                 buttonsAlgorithm(false);
 
-                if ((betPuke2.getLeft() - deltaTopX )* toDp == puke2.getLeft() * toDp &&
-                        betPuke2.getTop() *toDp == puke2.getTop()*toDp) {
+                if ((betPuke2.getLeft() - deltaTopX) * toDp == puke2.getLeft() * toDp &&
+                        betPuke2.getTop() * toDp == puke2.getTop() * toDp) {
                     score++;
 
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
 
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -353,19 +356,19 @@ public class MainActivity extends AppCompatActivity {
 
                 buttonsAlgorithm(false);
 
-                if ((betPuke3.getLeft() - deltaTopX )* toDp == puke2.getLeft() * toDp &&
-                        betPuke3.getTop() *toDp == puke2.getTop()*toDp) {
+                if ((betPuke3.getLeft() - deltaTopX) * toDp == puke2.getLeft() * toDp &&
+                        betPuke3.getTop() * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -385,19 +388,19 @@ public class MainActivity extends AppCompatActivity {
 
                 buttonsAlgorithm(false);
 
-                if ((betPuke4.getLeft() - deltaCenterX )* toDp == puke2.getLeft() * toDp &&
-                        (betPuke4.getTop() - deltaCenterY )*toDp == puke2.getTop()*toDp) {
+                if ((betPuke4.getLeft() - deltaCenterX) * toDp == puke2.getLeft() * toDp &&
+                        (betPuke4.getTop() - deltaCenterY) * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -416,19 +419,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 buttonsAlgorithm(false);
 
-                if ((betPuke5.getLeft() - deltaCenterX )* toDp != puke2.getLeft() * toDp &&
-                        (betPuke5.getTop() - deltaCenterY )*toDp == puke2.getTop()*toDp) {
+                if ((betPuke5.getLeft() - deltaCenterX) * toDp != puke2.getLeft() * toDp &&
+                        (betPuke5.getTop() - deltaCenterY) * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -447,19 +450,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 buttonsAlgorithm(false);
 
-                if ((betPuke6.getLeft() - deltaBottomX )* toDp == puke2.getLeft() * toDp &&
-                        (betPuke6.getTop() - deltaBottomY)  *toDp == puke2.getTop()*toDp) {
+                if ((betPuke6.getLeft() - deltaBottomX) * toDp == puke2.getLeft() * toDp &&
+                        (betPuke6.getTop() - deltaBottomY) * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -478,19 +481,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 buttonsAlgorithm(false);
 
-                if ((betPuke7.getLeft() - deltaBottomX )* toDp == puke2.getLeft() * toDp &&
-                        (betPuke7.getTop() - deltaBottomY)  *toDp == puke2.getTop()*toDp) {
+                if ((betPuke7.getLeft() - deltaBottomX) * toDp == puke2.getLeft() * toDp &&
+                        (betPuke7.getTop() - deltaBottomY) * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -509,19 +512,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 buttonsAlgorithm(false);
 
-                if ((betPuke8.getLeft() - deltaBottomX )* toDp == puke2.getLeft() * toDp &&
-                        (betPuke8.getTop() - deltaBottomY)  *toDp == puke2.getTop()*toDp) {
+                if ((betPuke8.getLeft() - deltaBottomX) * toDp == puke2.getLeft() * toDp &&
+                        (betPuke8.getTop() - deltaBottomY) * toDp == puke2.getTop() * toDp) {
                     score++;
-                    if (gameMode.equals("Time Attack")){
+                    if (gameMode.equals("Time Attack")) {
                         if (countDown != null)
                             countDown.cancel();
-                        createCountDownTimer(remainingTime *1000 + 5500);
+                        createCountDownTimer(remainingTime * 1000 + 5500);
                         countDown.start();
                     }
                     checkScore();
                 } else {
                     score = 0;
-                    if(isFirstLost){
+                    if (isFirstLost) {
                         SharedPreferences.Editor editor = mSharedPreferences.edit();
                         editor.putBoolean("isFirstLost", false);
                         editor.apply();
@@ -537,7 +540,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (fab_shuffle != null) {
             fab_shuffle.setBackgroundTintList(ColorStateList.valueOf(Color.MAGENTA));
-            if(isFirstTime){
+            if (isFirstTime) {
                 ObjectAnimator animY = ObjectAnimator.ofFloat(fab_shuffle, "translationY", -80f, 0f);
                 animY.setDuration(750);//850 milliseconds
                 animY.setInterpolator(new BounceInterpolator());
@@ -548,6 +551,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     protected void onResume() {
         super.onResume();
         Log.d("Debug-HC", "onResume");
@@ -563,336 +567,336 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void cleanAnnimations() {
-        if(AnimationMoveA != null && AnimationMoveA.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveA != null && AnimationMoveA.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveA.end();
         }
 
-        if(AnimationMoveB != null && AnimationMoveB.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveB != null && AnimationMoveB.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveB.end();
         }
 
-        if(AnimationMoveC != null && AnimationMoveC.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveC != null && AnimationMoveC.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveC.end();
         }
 
-        if(AnimationMoveD != null && AnimationMoveD.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveD != null && AnimationMoveD.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveD.end();
         }
 
-        if(AnimationMoveE != null && AnimationMoveE.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveE != null && AnimationMoveE.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveE.end();
         }
 
-        if(AnimationMoveF != null && AnimationMoveF.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveF != null && AnimationMoveF.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveF.end();
         }
 
-        if(AnimationMoveG != null && AnimationMoveG.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveG != null && AnimationMoveG.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveG.end();
         }
 
-        if(AnimationMoveH != null && AnimationMoveH.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveH != null && AnimationMoveH.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveH.end();
         }
 
-        if(AnimationMoveI != null && AnimationMoveI.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveI != null && AnimationMoveI.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveI.end();
         }
 
-        if(AnimationMoveJ != null && AnimationMoveJ.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveJ != null && AnimationMoveJ.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveJ.end();
         }
 
-        if(AnimationMoveK != null && AnimationMoveK.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveK != null && AnimationMoveK.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveK.end();
         }
 
-        if(AnimationMoveL != null && AnimationMoveL.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveL != null && AnimationMoveL.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveL.end();
         }
 
-        if(AnimationMoveM != null && AnimationMoveM.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveM != null && AnimationMoveM.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveM.end();
         }
 
-        if(AnimationMoveMbis != null && AnimationMoveMbis.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveMbis != null && AnimationMoveMbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveMbis.end();
         }
 
-        if(AnimationMoveN != null && AnimationMoveN.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveN != null && AnimationMoveN.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveN.end();
         }
 
-        if(AnimationMoveNbis != null && AnimationMoveNbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveNbis != null && AnimationMoveNbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveNbis.end();
         }
 
-        if(AnimationMoveO != null && AnimationMoveO.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveO != null && AnimationMoveO.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveO.end();
         }
 
-        if(AnimationMoveObis != null && AnimationMoveObis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveObis != null && AnimationMoveObis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveObis.end();
         }
 
-        if(AnimationMoveP != null && AnimationMoveP.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveP != null && AnimationMoveP.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveP.end();
         }
 
-        if(AnimationMovePbis != null && AnimationMovePbis.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMovePbis != null && AnimationMovePbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMovePbis.end();
         }
 
-        if(AnimationMoveQ != null && AnimationMoveQ.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveQ != null && AnimationMoveQ.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveQ.end();
         }
 
-        if(AnimationMoveQbis != null && AnimationMoveQbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveQbis != null && AnimationMoveQbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveQbis.end();
         }
 
-        if(AnimationMoveR != null && AnimationMoveR.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveR != null && AnimationMoveR.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveR.end();
         }
 
-        if(AnimationMoveRbis != null && AnimationMoveRbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveRbis != null && AnimationMoveRbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveRbis.end();
         }
 
-        if(AnimationMoveS != null && AnimationMoveS.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveS != null && AnimationMoveS.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveS.end();
         }
 
-        if(AnimationMoveT != null && AnimationMoveT.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveT != null && AnimationMoveT.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveT.end();
         }
 
-        if(AnimationMoveU != null && AnimationMoveU.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveU != null && AnimationMoveU.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveU.end();
         }
 
-        if(AnimationMoveUbis != null && AnimationMoveUbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveUbis != null && AnimationMoveUbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveUbis.end();
         }
 
-        if(AnimationMoveV != null && AnimationMoveV.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveV != null && AnimationMoveV.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveV.end();
         }
 
-        if(AnimationMoveVbis != null && AnimationMoveVbis.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveVbis != null && AnimationMoveVbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveVbis.end();
         }
 
-        if(AnimationMoveW != null && AnimationMoveW.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveW != null && AnimationMoveW.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveW.end();
         }
 
-        if(AnimationMoveWbis != null && AnimationMoveWbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveWbis != null && AnimationMoveWbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveWbis.end();
         }
 
-        if(AnimationMoveX != null && AnimationMoveX.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveX != null && AnimationMoveX.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveX.end();
         }
 
-        if(AnimationMoveXbis != null && AnimationMoveXbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveXbis != null && AnimationMoveXbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveXbis.end();
         }
 
-        if(AnimationMoveY != null && AnimationMoveY.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveY != null && AnimationMoveY.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveY.end();
         }
 
-        if(AnimationMoveYbis != null && AnimationMoveYbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveYbis != null && AnimationMoveYbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveYbis.end();
         }
 
-        if(AnimationMoveZ != null && AnimationMoveZ.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveZ != null && AnimationMoveZ.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveZ.end();
         }
 
-        if(AnimationMoveZbis != null && AnimationMoveZbis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveZbis != null && AnimationMoveZbis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveZbis.end();
         }
 
-        if(AnimationMoveAlpha != null && AnimationMoveAlpha.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveAlpha != null && AnimationMoveAlpha.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveAlpha.end();
         }
 
-        if(AnimationMoveAlphaBis != null && AnimationMoveAlphaBis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveAlphaBis != null && AnimationMoveAlphaBis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveAlphaBis.end();
         }
 
-        if(AnimationMoveBeta != null && AnimationMoveBeta.isRunning()) {
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveBeta != null && AnimationMoveBeta.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
             AnimationMoveBeta.end();
         }
 
-        if(AnimationMoveBetaBis != null && AnimationMoveBetaBis.isRunning()){
-            if(listAnimations != null && !listAnimations.isEmpty()){
+        if (AnimationMoveBetaBis != null && AnimationMoveBetaBis.isRunning()) {
+            if (listAnimations != null && !listAnimations.isEmpty()) {
                 iterator = 0;
                 listAnimations.clear();
             }
@@ -929,7 +933,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkScore() {
 
-        if(gameMode.equals("Time Attack")) {
+        if (gameMode.equals("Time Attack")) {
             if (score > timeAttackHighScore) {
                 timeAttackHighScore = score;
 
@@ -938,7 +942,7 @@ public class MainActivity extends AppCompatActivity {
                 editor.apply();
 
             }
-        }else if(gameMode.equals("Infinity Mode")) {
+        } else if (gameMode.equals("Infinity Mode")) {
             if (score > topScore) {
                 topScore = score;
 
@@ -952,68 +956,68 @@ public class MainActivity extends AppCompatActivity {
 
         defineSpeed();
 
-        if(score == 5){
+        if (score == 5) {
             showSpeedDialog(speed);
-        }else if(score == 10){
+        } else if (score == 10) {
             showSpeedDialog(speed);
-        }else if(score == 15){
+        } else if (score == 15) {
             showSpeedDialog(speed);
-        }else if(score == 25){
+        } else if (score == 25) {
             showSpeedDialog(speed);
-        }else if(score == 50){
+        } else if (score == 50) {
             showSpeedDialog(speed);
-        }else if(score == 75){
+        } else if (score == 75) {
             showSpeedDialog(speed);
-        }else if(score == 100){
+        } else if (score == 100) {
             showSpeedDialog(speed);
-        }else if(score == 150){
+        } else if (score == 150) {
             showSpeedDialog(speed);
-        }else if(score == 200){
+        } else if (score == 200) {
             showSpeedDialog(speed);
-        }else if(score == 300){
+        } else if (score == 300) {
             showSpeedDialog(speed);
-        }else if(score == 450){
+        } else if (score == 450) {
             showSpeedDialog(speed);
-        }else if(score == 500){
+        } else if (score == 500) {
             showSpeedDialog(speed);
         }
     }
 
-    private void defineSpeed(){
+    private void defineSpeed() {
 
-        if(gameMode.equals("Time Attack")){
-            if(score>=0 && score <15){
+        if (gameMode.equals("Time Attack")) {
+            if (score >= 0 && score < 15) {
                 speed = 420;
-            }else if(score>=15 && score <25){
+            } else if (score >= 15 && score < 25) {
                 speed = 314;
-            }else if(score>=25 && score <50){
+            } else if (score >= 25 && score < 50) {
                 speed = 200;
-            }else if(score>=50){
+            } else if (score >= 50) {
                 speed = 100;
             }
-        }else if(gameMode.equals("Infinity Mode")){
-            if(score>=0 && score <5){
+        } else if (gameMode.equals("Infinity Mode")) {
+            if (score >= 0 && score < 5) {
                 speed = 1000;
-            }else if(score>=5 && score <10){
+            } else if (score >= 5 && score < 10) {
                 speed = 900;
-            }else if(score>=10 && score <15){
+            } else if (score >= 10 && score < 15) {
                 speed = 800;
-            }else if(score>=15 && score <25){
+            } else if (score >= 15 && score < 25) {
                 speed = 700;
-            }else if(score>=25 && score <50){
+            } else if (score >= 25 && score < 50) {
                 speed = 600;
-            }else if(score>=50 && score <75){
+            } else if (score >= 50 && score < 75) {
                 speed = 500;
-            }else if(score>=75 && score <100){
+            } else if (score >= 75 && score < 100) {
                 speed = 400;
-            }else if(score>=100){
+            } else if (score >= 100) {
                 speed = 300;
             }
         }
     }
 
     public void onClickTopScore(View v) {
-        if(topScoreOnClickIsEnabled){
+        if (topScoreOnClickIsEnabled) {
             score = topScore;
 
             topCounter.setText(String.format("%1$03d", topScore));
@@ -1047,10 +1051,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAnimationCancel(Animator animation) {}
+            public void onAnimationCancel(Animator animation) {
+            }
 
             @Override
-            public void onAnimationRepeat(Animator animation) {}
+            public void onAnimationRepeat(Animator animation) {
+            }
         });
         AnimationMoveA.setDuration(speed);
         AnimationMoveA.start();
@@ -1087,10 +1093,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onAnimationCancel(Animator animation) {}
+            public void onAnimationCancel(Animator animation) {
+            }
 
             @Override
-            public void onAnimationRepeat(Animator animation) {}
+            public void onAnimationRepeat(Animator animation) {
+            }
         });
         AnimationMoveB.setDuration(speed);
         AnimationMoveB.start();
@@ -1124,6 +1132,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonsAlgorithm(true);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
@@ -1165,6 +1174,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonsAlgorithm(true);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
@@ -1205,6 +1215,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonsAlgorithm(true);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
@@ -1245,6 +1256,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonsAlgorithm(true);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
@@ -1256,8 +1268,8 @@ public class MainActivity extends AppCompatActivity {
         AnimationMoveF.setDuration(speed);
         AnimationMoveF.start();
 
-        pukeInPosSix.setTop((int)posOneY);
-        pukeInPosOne.setTop((int)posSixY);
+        pukeInPosSix.setTop((int) posOneY);
+        pukeInPosOne.setTop((int) posSixY);
     }
 
     private void moveG() {
@@ -1285,6 +1297,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonsAlgorithm(true);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
@@ -1296,8 +1309,8 @@ public class MainActivity extends AppCompatActivity {
         AnimationMoveG.setDuration(speed);
         AnimationMoveG.start();
 
-        pukeInPosEight.setTop((int)posThreeY);
-        pukeInPosThree.setTop((int)posEightY);
+        pukeInPosEight.setTop((int) posThreeY);
+        pukeInPosThree.setTop((int) posEightY);
     }
 
     private void moveH() {
@@ -1325,6 +1338,7 @@ public class MainActivity extends AppCompatActivity {
                     buttonsAlgorithm(true);
                 }
             }
+
             @Override
             public void onAnimationCancel(Animator animation) {
             }
@@ -1839,8 +1853,8 @@ public class MainActivity extends AppCompatActivity {
         AnimationMoveS.setDuration(speed);
         AnimationMoveS.start();
 
-        pukeInPosSeven.setTop((int)posTwoY);
-        pukeInPosTwo.setTop((int)posSevenY);
+        pukeInPosSeven.setTop((int) posTwoY);
+        pukeInPosTwo.setTop((int) posSevenY);
     }
 
     private void moveT() {
@@ -1884,7 +1898,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosFour.setLeft((int) posFiveX);
     }
 
-    private void moveU(){
+    private void moveU() {
         pukeInPosTwo = returnPukeInPos(posTwoX, posTwoY);
         pukeInPosFour = returnPukeInPos(posFourX, posFourY);
 
@@ -1933,7 +1947,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosTwo.setTop((int) posFourY);
     }
 
-    private void moveV(){
+    private void moveV() {
         pukeInPosTwo = returnPukeInPos(posTwoX, posTwoY);
         pukeInPosFive = returnPukeInPos(posFiveX, posFiveY);
 
@@ -1982,7 +1996,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosTwo.setTop((int) posFiveY);
     }
 
-    private void moveW(){
+    private void moveW() {
         pukeInPosSeven = returnPukeInPos(posSevenX, posSevenY);
         pukeInPosFive = returnPukeInPos(posFiveX, posFiveY);
 
@@ -2031,7 +2045,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosSeven.setTop((int) posFiveY);
     }
 
-    private void moveX(){
+    private void moveX() {
         pukeInPosSeven = returnPukeInPos(posSevenX, posSevenY);
         pukeInPosFour = returnPukeInPos(posFourX, posFourY);
 
@@ -2080,7 +2094,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosSeven.setTop((int) posFourY);
     }
 
-    private void moveY(){
+    private void moveY() {
         pukeInPosTwo = returnPukeInPos(posTwoX, posTwoY);
         pukeInPosSix = returnPukeInPos(posSixX, posSixY);
 
@@ -2129,7 +2143,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosSix.setTop((int) posTwoY);
     }
 
-    private void moveZ(){
+    private void moveZ() {
         pukeInPosSeven = returnPukeInPos(posSevenX, posSevenY);
         pukeInPosOne = returnPukeInPos(posOneX, posOneY);
 
@@ -2178,7 +2192,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosSeven.setTop((int) posOneY);
     }
 
-    private void moveAlpha(){
+    private void moveAlpha() {
         pukeInPosFive = returnPukeInPos(posFiveX, posFiveY);
         pukeInPosOne = returnPukeInPos(posOneX, posOneY);
 
@@ -2227,7 +2241,7 @@ public class MainActivity extends AppCompatActivity {
         pukeInPosFive.setTop((int) posOneY);
     }
 
-    private void moveBeta(){
+    private void moveBeta() {
         pukeInPosFive = returnPukeInPos(posFiveX, posFiveY);
         pukeInPosSix = returnPukeInPos(posSixX, posSixY);
 
@@ -2280,21 +2294,21 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView pukeToReturn;
 
-        if (puke1.getLeft() == x && puke1.getTop() == y){
+        if (puke1.getLeft() == x && puke1.getTop() == y) {
             pukeToReturn = puke1;
-        } else if(puke2.getLeft() == x && puke2.getTop() == y){
+        } else if (puke2.getLeft() == x && puke2.getTop() == y) {
             pukeToReturn = puke2;
-        } else if  (puke3.getLeft() == x && puke3.getTop() == y){
+        } else if (puke3.getLeft() == x && puke3.getTop() == y) {
             pukeToReturn = puke3;
-        } else if(puke4.getLeft() == x && puke4.getTop() == y){
+        } else if (puke4.getLeft() == x && puke4.getTop() == y) {
             pukeToReturn = puke4;
-        } else if  (puke5.getLeft() == x && puke5.getTop() == y){
+        } else if (puke5.getLeft() == x && puke5.getTop() == y) {
             pukeToReturn = puke5;
-        } else if(puke6.getLeft() == x && puke6.getTop() == y){
+        } else if (puke6.getLeft() == x && puke6.getTop() == y) {
             pukeToReturn = puke6;
-        } else if  (puke7.getLeft() == x && puke7.getTop() == y){
+        } else if (puke7.getLeft() == x && puke7.getTop() == y) {
             pukeToReturn = puke7;
-        } else if  (puke8.getLeft() == x && puke8.getTop() == y){
+        } else if (puke8.getLeft() == x && puke8.getTop() == y) {
             pukeToReturn = puke8;
         } else {
             pukeToReturn = null;
@@ -2304,8 +2318,8 @@ public class MainActivity extends AppCompatActivity {
         return pukeToReturn;
     }
 
-    public void moveToDo(int val){
-        switch (val){
+    public void moveToDo(int val) {
+        switch (val) {
             case 0:
                 moveA();
                 break;
@@ -2402,7 +2416,7 @@ public class MainActivity extends AppCompatActivity {
 
         int shuffleTimes = 7 + Integer.parseInt(victoryCounter.getText().toString());
 
-        for(int i = 0; i < shuffleTimes; i++){
+        for (int i = 0; i < shuffleTimes; i++) {
             //new random value
             Random randomGenerator = new Random();
             int randomValue = randomGenerator.nextInt(28);
@@ -2410,11 +2424,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         iterator = listAnimations.size();
-        moveToDo(listAnimations.get(iterator -1));
+        moveToDo(listAnimations.get(iterator - 1));
 
     }
 
-    public void hide(){
+    public void hide() {
         puke2.setImageResource(R.drawable.ic_track_changes_black);
     }
 
@@ -2436,7 +2450,7 @@ public class MainActivity extends AppCompatActivity {
     public void showSpeedDialog(float speed) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
-        String dialogTitleSpeed = "Speed Up !" + " " + (int) speed +"ms";
+        String dialogTitleSpeed = "Speed Up !" + " " + (int) speed + "ms";
         builder.setTitle(dialogTitleSpeed)
                 .setCancelable(true)
                 .setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -2447,7 +2461,7 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setIcon(R.drawable.ic_flash_on);
 
-        if (gameMode.equals("Infinity Mode")){
+        if (gameMode.equals("Infinity Mode")) {
             builder.create().show();
         }
     }
@@ -2457,13 +2471,13 @@ public class MainActivity extends AppCompatActivity {
 
         String dialogTitle = "Hint";
         String highScoreString = "<b><font color='#B0171F'>High Score</font></b>";
-        String content = "Tap on "+ highScoreString +" to pick up where you left off";
+        String content = "Tap on " + highScoreString + " to pick up where you left off";
         builder.setTitle(dialogTitle)
                 .setMessage(Html.fromHtml(content))
                 .setCancelable(true)
                 .setIcon(R.drawable.ic_developer_mode_black);
 
-        if (gameMode.equals("Infinity Mode")){
+        if (gameMode.equals("Infinity Mode")) {
             builder.create().show();
         }
     }
@@ -2474,8 +2488,8 @@ public class MainActivity extends AppCompatActivity {
         String dialogTitle = "Tutorial";
         String magentaString = "<b><font color='#ff00ff'>magenta</font></b>";
         String gameModeString = "<i><font color='#00c7c7'>Game Mode</font></i>";
-        String content = "Click on the "+ magentaString +" button to shuffle the pucks, then try to find the star. " +
-                "You can try another "+gameModeString+" in Settings. Enjoy the game!";
+        String content = "Click on the " + magentaString + " button to shuffle the pucks, then try to find the star. " +
+                "You can try another " + gameModeString + " in Settings. Enjoy the game!";
         builder.setTitle(dialogTitle)
                 .setMessage(Html.fromHtml(content))
                 .setCancelable(true)
@@ -2492,13 +2506,13 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
         String dialogTitle = "Time Attack";
-        String content =  "HighScore : "+String.valueOf(timeAttackHighScore);
+        String content = "HighScore : " + String.valueOf(timeAttackHighScore);
         builder.setTitle(dialogTitle)
                 .setMessage(content)
                 .setCancelable(true)
                 .setIcon(R.drawable.ic_grade_black);
 
-        if (gameMode.equals("Time Attack")){
+        if (gameMode.equals("Time Attack")) {
             builder.create().show();
         }
     }
@@ -2507,7 +2521,7 @@ public class MainActivity extends AppCompatActivity {
         countDown = new CountDownTimer(startValue, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                remainingTime = millisUntilFinished/1000;
+                remainingTime = millisUntilFinished / 1000;
                 timer.setText(String.format("%1$03d", remainingTime));
             }
 
@@ -2515,13 +2529,13 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
                 timer.setText(String.format("%1$03d", 0));
                 lostTimeAttackDialog();
-                gameStarted=false;
+                gameStarted = false;
                 timer.setText(String.format("%1$03d", 30));
             }
         };
     }
 
-        @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater menuInflater = getMenuInflater();
@@ -2538,8 +2552,7 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         Intent preferenceIntent = new Intent(this, SettingsActivity.class);
 
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.action_settings:
                 startActivity(preferenceIntent);
                 return true;

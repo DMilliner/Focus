@@ -8,10 +8,10 @@ import android.preference.PreferenceFragment;
 /**
  * Created by davidmilliner on 12/06/16.
  */
-public class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class SettingsFragment extends PreferenceFragment implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
     }
@@ -20,14 +20,12 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         //IT NEVER GETS IN HERE!
-        if (key.equals("user_name"))
-        {
+        if (key.equals("user_name")) {
             // Set summary to be the user-description for the selected value
             Preference exercisesPref = findPreference(key);
             exercisesPref.setSummary(sharedPreferences.getString(key, ""));
         }
-        if (key.equals("game_mode"))
-        {
+        if (key.equals("game_mode")) {
             // Set summary to be the user-description for the selected value
             Preference exercisesPref = findPreference(key);
             exercisesPref.setSummary(sharedPreferences.getString(key, ""));
